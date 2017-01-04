@@ -52,10 +52,10 @@ main() {
          -*)              echo "Unknown option ${o}.  Try --help."; exit 1; ;;
       esac
    done
-   OPT_WARN_MAX_DELAY=${OPT_WARN_MAX_DELAY:-300}
-   OPT_CRIT_MAX_DELAY=${OPT_CRIT_MAX_DELAY:-600}
-   OPT_WARN_MIN_DELAY=${OPT_WARN_MAX_DELAY:--300}
-   OPT_CRIT_MIN_DELAY=${OPT_CRIT_MIN_DELAY:--600}
+   OPT_WARN_MAX_DELAY=${OPT_WARN_MAX_DELAY:=300}
+   OPT_CRIT_MAX_DELAY=${OPT_CRIT_MAX_DELAY:=600}
+   OPT_WARN_MIN_DELAY=${OPT_WARN_MIN_DELAY:=-300}
+   OPT_CRIT_MIN_DELAY=${OPT_CRIT_MIN_DELAY:=-600}
    if [ -e '/etc/nagios/mysql.cnf' ]; then
       OPT_DEFT="${OPT_DEFT:-/etc/nagios/mysql.cnf}"
    fi
