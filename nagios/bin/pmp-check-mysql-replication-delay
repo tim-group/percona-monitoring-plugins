@@ -108,10 +108,10 @@ main() {
       # pt-slave-delayed slave
       elif [ "${LEVEL:-0}" -lt "${OPT_CRIT_MIN_DELAY}" ]; then
          NOTE="CRIT (delayed slave) $NOTE | $PERFDATA"
-      elif [ "${LEVEL:-0}" -lt "${OPT_WARN_MIN_DELAY}" ]; then
-         NOTE="WARN (delayed slave) $NOTE | $PERFDATA"
       elif [ "${LEVEL:-0}" -gt "${OPT_CRIT_MAX_DELAY}" ]; then
          NOTE="CRIT $NOTE | $PERFDATA"
+      elif [ "${LEVEL:-0}" -lt "${OPT_WARN_MIN_DELAY}" ]; then
+         NOTE="WARN (delayed slave) $NOTE | $PERFDATA"
       elif [ "${LEVEL:-0}" -gt "${OPT_WARN_MAX_DELAY}" ]; then
          NOTE="WARN $NOTE | $PERFDATA"
       else
